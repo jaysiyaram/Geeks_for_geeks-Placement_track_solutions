@@ -36,7 +36,7 @@ def merge_sort(a_list):
         i, j, k = (0,)*3
 
         while i < len(left_list) and j < len(right_list):
-            if left_list[i] < right_list[j]:
+            if compare(left_list[i],right_list[j]):
                 a_list[k] = left_list[i]
                 i += 1
                 k += 1
@@ -55,6 +55,14 @@ def merge_sort(a_list):
             j += 1
             k += 1
 
+def compare(l_val, r_val):
+    val1 = int(l_val + r_val)
+    val2 = int(r_val + l_val)
+    if val1 > val2:
+        return True
+    else:
+        return False
+
 #li = [4, 7, 2, 1, 7, 9]
 #merge_sort(li)
 #print(li)
@@ -64,8 +72,8 @@ for _ in range(test_cases):
     arr_len = int(input())
     arr = input().split()
     merge_sort(arr)
-    print(arr)
+    #print(arr)
     temp = ''
-    for i in arr[::-1]:
+    for i in arr:
         temp += i
     print(temp)
