@@ -26,4 +26,5 @@ for _ in range(test_cases):
     for i in temp_arr:
         print(i, end=' ')
     print()
+
     
